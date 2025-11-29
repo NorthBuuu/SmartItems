@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能物品成本管理工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">智能物品成本管理</h1>
+            <p class="subtitle">轻松追踪物品的每日使用成本</p>
+        </header>
+
+        <main class="main">
+            <!-- 添加物品表单 -->
+            <section class="form-section">
+                <div class="card">
+                    <h2 class="card-title">添加新物品</h2>
+                    <form id="item-form" class="item-form">
+                        <div class="form-group">
+                            <label for="item-name" class="form-label">物品名称</label>
+                            <input type="text" id="item-name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="item-price" class="form-label">价格 (¥)</label>
+                            <input type="number" id="item-price" class="form-input" step="0.01" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">购入时间</label>
+                            <div class="input-group">
+                                <input type="date" id="purchase-date" class="form-input">
+                                <span class="input-divider">或</span>
+                                <input type="number" id="purchase-days" class="form-input" placeholder="已使用天数" min="1">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary">添加物品</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- 物品列表 -->
+            <section class="items-section">
+                <div class="card">
+                    <h2 class="card-title">物品列表</h2>
+                    <div id="items-list" class="items-list">
+                        <!-- 物品卡片将通过 JavaScript 动态生成 -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
